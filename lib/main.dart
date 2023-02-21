@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie/apiMovieList.dart';
 import 'package:movie/modelMovieList.dart';
-import 'package:movie/movie_view.dart';
+import 'package:movie/movie_list/movie_view.dart';
 
 void main() {
   runApp(const MyApp());
