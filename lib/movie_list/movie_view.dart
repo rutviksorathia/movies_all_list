@@ -22,9 +22,9 @@ class MovieView extends StatelessWidget {
                 Text(
                   'Movies List',
                   style: GoogleFonts.elsie(
-                      fontSize: 20, fontWeight: FontWeight.bold),
+                      fontSize: 30, fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 Expanded(
                   child: SingleChildScrollView(
                     child: GridView.count(
@@ -65,23 +65,22 @@ class MovieListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: model.fetchMovies,
-      child: Container(
-        clipBehavior: Clip.antiAlias,
-        width: double.infinity,
-        decoration: ShapeDecoration(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-          color: Colors.grey.shade200,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Image.network(
-            result.posterPath,
-            fit: BoxFit.cover,
+        onTap: model.fetchMovies,
+        child: Container(
+          clipBehavior: Clip.antiAlias,
+          width: double.infinity,
+          decoration: ShapeDecoration(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)),
+            color: Colors.grey.shade200,
           ),
-        ),
-      ),
-    );
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Text(
+              result.title,
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ));
   }
 }
