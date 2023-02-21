@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movie/modelMovieList.dart';
+import 'package:movie/model/modelMovieList.dart';
 import 'package:movie/movie_list/movie_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 

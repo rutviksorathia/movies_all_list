@@ -1,4 +1,4 @@
-import 'package:movie/modelMovieList.dart';
+import 'package:movie/model/modelMovieList.dart';
 import 'package:stacked/stacked.dart';
 
 class MovieViewModel extends BaseViewModel {

@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:movie/modelMovieList.dart';
+import 'package:movie/model/modelMovieList.dart';
 
 Future<Movie> apiMovieList() async {
   final url = Uri.parse(
