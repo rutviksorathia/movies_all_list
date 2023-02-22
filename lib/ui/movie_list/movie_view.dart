@@ -29,16 +29,15 @@ class MovieView extends StatelessWidget {
                   child: SingleChildScrollView(
                     child: GridView.count(
                       crossAxisCount: 2,
-                      crossAxisSpacing: 2,
+                      crossAxisSpacing: 20,
+                      childAspectRatio: 1.2,
+                      mainAxisSpacing: 20,
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       children: movies.results!
-                          .map((e) => Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: MovieListItem(
-                                  result: e,
-                                  model: model,
-                                ),
+                          .map((e) => MovieListItem(
+                                result: e,
+                                model: model,
                               ))
                           .toList(),
                     ),
@@ -74,15 +73,18 @@ class MovieListItem extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.0)),
             color: Colors.grey.shade200,
           ),
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Text(
-              result.title,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+          child: Stack(
+            children: [
+              Image.network(
+                  'https://image.tmdb.org/t/p/w500${result.backdropPath}'),
+              Text(
+                result.title,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
+            ],
           ),
         ));
   }
